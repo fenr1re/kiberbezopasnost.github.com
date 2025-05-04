@@ -14,88 +14,110 @@
             --accent-red: #C62828;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            margin: 0;
             background: var(--light-gray);
             color: #333;
+            font-size: 16px;
         }
 
         header {
             background: var(--primary-green);
             color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         nav {
             background: var(--dark-gray);
-            padding: 1rem;
+            padding: 0.8rem;
             position: sticky;
             top: 0;
             z-index: 100;
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.5rem;
+            justify-content: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
             transition: all 0.3s ease;
             background: var(--medium-gray);
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         nav a:hover {
             background: var(--dark-green);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .section {
             background: white;
             border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
+            overflow-x: auto;
+            display: block;
         }
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
+            padding: 0.8rem;
             text-align: left;
+            border-bottom: 1px solid #ddd;
+            min-width: 120px;
         }
 
         th {
             background: #E8F5E9;
+            font-weight: 600;
         }
 
         .rating-card {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         .good, .bad {
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 8px;
+            margin: 0.5rem 0;
         }
 
         .good {
@@ -108,8 +130,16 @@
             border-left: 4px solid var(--accent-red);
         }
 
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
         a {
-            color: var(--dark-green);
+            color: var(--primary-green);
             text-decoration: none;
         }
 
@@ -117,40 +147,34 @@
             text-decoration: underline;
         }
 
-        .category {
-            margin: 2rem 0;
-            padding: 1rem;
-            border-left: 3px solid var(--medium-gray);
-        }
-
-        .protection-levels {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
         .feature {
-            padding: 1.5rem;
+            padding: 1rem;
             background: #f8f9fa;
             border-radius: 8px;
             border: 1px solid #dee2e6;
         }
 
-        .feature h4 {
-            margin: 0 0 1rem 0;
-            color: var(--primary-green);
+        @media (min-width: 768px) {
+            nav { gap: 1rem; padding: 1rem; }
+            nav a { padding: 0.8rem 1.5rem; font-size: 1rem; }
+            .container { padding: 2rem; }
+            .section { padding: 2rem; margin: 2rem 0; }
+            h2 { font-size: 1.8rem; }
+            .rating-card { grid-template-columns: 1fr 1fr; }
+            .features-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
         }
 
-        .feature p {
-            margin: 0;
-            font-size: 0.9em;
+        @media (max-width: 480px) {
+            header { padding: 1rem; }
+            h2 { font-size: 1.3rem; }
+            h3 { font-size: 1.1rem; }
+            th, td { padding: 0.6rem; }
         }
     </style>
 </head>
@@ -166,10 +190,13 @@
         <a href="#rating">🏆 Рейтинг</a>
         <a href="#tips">🔐 Советы</a>
         <a href="#tools">🔧 Инструменты</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLYKFAcllf3sj0swuSrykJkIc5KFMb3eXvU7VFdAkLpmY37Q/viewform?usp=header" 
+           target="_blank">
+           📝 Тест
+        </a>
     </nav>
 
     <div class="container">
-        <!-- Секция о вирусах -->
         <section class="section" id="viruses">
             <h2>🦠 Опасные компьютерные угрозы</h2>
             <div class="category">
@@ -184,7 +211,6 @@
             </div>
         </section>
 
-        <!-- Секция об антивирусах -->
         <section class="section" id="antivirus">
             <h2>🛡️ Современные антивирусные решения</h2>
             <div class="category">
@@ -206,35 +232,43 @@
             </div>
         </section>
 
-        <!-- Секция с рейтингами -->
         <section class="section" id="rating">
             <h2>🏆 Рейтинг антивирусов 2024</h2>
             <div class="rating-card">
                 <div class="good">
-                    <h3>🚀 Топ-5 лучших</h3>
+                    <h3>🚀 Топ-10 лучших</h3>
                     <ul>
-                        <li><a href="https://www.bitdefender.com" target="_blank">Bitdefender Total Security</a> - 99.9% защита</li>
-                        <li><a href="https://www.kaspersky.ru" target="_blank">Kaspersky Premium</a> - лучший фаервол</li>
-                        <li><a href="https://us.norton.com" target="_blank">Norton 360 Deluxe</a> - комплексное решение</li>
-                        <li><a href="https://www.eset.com" target="_blank">ESET Internet Security</a> - минимальная нагрузка</li>
-                        <li><a href="https://www.malwarebytes.com" target="_blank">Malwarebytes Premium</a> - против сложных угроз</li>
+                        <li><a href="https://www.bitdefender.com" target="_blank">Bitdefender Total Security</a></li>
+                        <li><a href="https://www.kaspersky.ru" target="_blank">Kaspersky Premium</a></li>
+                        <li><a href="https://us.norton.com" target="_blank">Norton 360 Deluxe</a></li>
+                        <li><a href="https://www.eset.com" target="_blank">ESET Internet Security</a></li>
+                        <li><a href="https://www.malwarebytes.com" target="_blank">Malwarebytes Premium</a></li>
+                        <li><a href="https://surfshark.com/antivirus" target="_blank">Surfshark Antivirus</a></li>
+                        <li><a href="https://www.webroot.com" target="_blank">Webroot SecureAnywhere</a></li>
+                        <li><a href="https://www.trendmicro.com" target="_blank">Trend Micro</a></li>
+                        <li><a href="https://www.avira.com" target="_blank">Avira Prime</a></li>
+                        <li><a href="https://www.f-secure.com" target="_blank">F-Secure TOTAL</a></li>
                     </ul>
                 </div>
                 
                 <div class="bad">
-                    <h3>⚠️ Топ-5 худших</h3>
+                    <h3>⚠️ Топ-10 худших</h3>
                     <ul>
                         <li>TotalAV - ложные срабатывания</li>
                         <li>Avast Free - утечка данных</li>
                         <li>Panda Dome - слабая защита</li>
                         <li>Comodo - навязчивые уведомления</li>
                         <li>360 Total Security - избыточные функции</li>
+                        <li>McAfee Basic - устаревший движок</li>
+                        <li>Ad-Aware - низкая эффективность</li>
+                        <li>AVG Ultimate - замедляет систему</li>
+                        <li>PRO32 Total Security - сложная настройка</li>
+                        <li>PCProtect - опасные срабатывания</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Секция с советами -->
         <section class="section" id="tips">
             <h2>🔐 Экспертные советы</h2>
             <div class="protection-levels">
@@ -262,7 +296,6 @@
             </div>
         </section>
 
-        <!-- Секция с инструментами -->
         <section class="section" id="tools">
             <h2>🔧 Полезные инструменты</h2>
             <table>

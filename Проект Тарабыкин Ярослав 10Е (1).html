@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кибербезопасность - Полное руководство</title>
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --dark-green: #1B5E20;
+            --light-gray: #f5f5f5;
+            --medium-gray: #607D8B;
+            --dark-gray: #455A64;
+            --accent-red: #C62828;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: var(--light-gray);
+            color: #333;
+        }
+
+        header {
+            background: var(--primary-green);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background: var(--dark-gray);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: var(--medium-gray);
+        }
+
+        nav a:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #E8F5E9;
+        }
+
+        .rating-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .good, .bad {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .good {
+            background: #E8F5E9;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .bad {
+            background: #FFEBEE;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        a {
+            color: var(--dark-green);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .category {
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 3px solid var(--medium-gray);
+        }
+
+        .protection-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .feature h4 {
+            margin: 0 0 1rem 0;
+            color: var(--primary-green);
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Кибербезопасность: полное руководство</h1>
+        <p>Всё о вирусах, антивирусах и защите данных</p>
+    </header>
+
+    <nav>
+        <a href="#viruses">🦠 Вирусы</a>
+        <a href="#antivirus">🛡️ Антивирусы</a>
+        <a href="#rating">🏆 Рейтинг</a>
+        <a href="#tips">🔐 Советы</a>
+        <a href="#tools">🔧 Инструменты</a>
+    </nav>
+
+    <div class="container">
+        <!-- Секция о вирусах -->
+        <section class="section" id="viruses">
+            <h2>🦠 Опасные компьютерные угрозы</h2>
+            <div class="category">
+                <h3>🔵 Типы вирусов</h3>
+                <ul>
+                    <li><strong>Черви</strong> - самораспространяющиеся через сети</li>
+                    <li><strong>Трояны</strong> - маскируются под полезные программы</li>
+                    <li><strong>Руткиты</strong> - скрывают вредоносную активность</li>
+                    <li><strong>Рекламные (Adware)</strong> - показывают навязчивую рекламу</li>
+                    <li><strong>Рансомеры</strong> - шифруют данные для выкупа</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Секция об антивирусах -->
+        <section class="section" id="antivirus">
+            <h2>🛡️ Современные антивирусные решения</h2>
+            <div class="category">
+                <h3>🔵 Основные технологии защиты</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h4>🔍 Сигнатурный анализ</h4>
+                        <p>Поиск известных шаблонов вредоносного кода</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🤖 Поведенческий анализ</h4>
+                        <p>Мониторинг подозрительных действий программ</p>
+                    </div>
+                    <div class="feature">
+                        <h4>☁️ Облачная защита</h4>
+                        <p>Мгновенные обновления через интернет</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с рейтингами -->
+        <section class="section" id="rating">
+            <h2>🏆 Рейтинг антивирусов 2024</h2>
+            <div class="rating-card">
+                <div class="good">
+                    <h3>🚀 Топ-5 лучших</h3>
+                    <ul>
+                        <li><a href="https://www.bitdefender.com" target="_blank">Bitdefender Total Security</a> - 99.9% защита</li>
+                        <li><a href="https://www.kaspersky.ru" target="_blank">Kaspersky Premium</a> - лучший фаервол</li>
+                        <li><a href="https://us.norton.com" target="_blank">Norton 360 Deluxe</a> - комплексное решение</li>
+                        <li><a href="https://www.eset.com" target="_blank">ESET Internet Security</a> - минимальная нагрузка</li>
+                        <li><a href="https://www.malwarebytes.com" target="_blank">Malwarebytes Premium</a> - против сложных угроз</li>
+                    </ul>
+                </div>
+                
+                <div class="bad">
+                    <h3>⚠️ Топ-5 худших</h3>
+                    <ul>
+                        <li>TotalAV - ложные срабатывания</li>
+                        <li>Avast Free - утечка данных</li>
+                        <li>Panda Dome - слабая защита</li>
+                        <li>Comodo - навязчивые уведомления</li>
+                        <li>360 Total Security - избыточные функции</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с советами -->
+        <section class="section" id="tips">
+            <h2>🔐 Экспертные советы</h2>
+            <div class="protection-levels">
+                <div class="level">
+                    <h3>🛡️ Основные правила</h3>
+                    <ul>
+                        <li>Обновляйте ПО еженедельно</li>
+                        <li>Используйте двухфакторную аутентификацию</li>
+                        <li>Не открывайте подозрительные вложения</li>
+                        <li>Проверяйте SSL-сертификаты сайтов</li>
+                        <li>Делайте резервные копии данных</li>
+                    </ul>
+                </div>
+
+                <div class="level">
+                    <h3>🔐 Продвинутая защита</h3>
+                    <ul>
+                        <li>Настройте аппаратный брандмауэр</li>
+                        <li>Используйте виртуальные машины</li>
+                        <li>Включите шифрование диска</li>
+                        <li>Регулярно проверяйте журналы событий</li>
+                        <li>Используйте аппаратные ключи безопасности</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с инструментами -->
+        <section class="section" id="tools">
+            <h2>🔧 Полезные инструменты</h2>
+            <table>
+                <tr>
+                    <th>Название</th>
+                    <th>Назначение</th>
+                    <th>Ссылка</th>
+                </tr>
+                <tr>
+                    <td>VirusTotal</td>
+                    <td>Проверка файлов онлайн</td>
+                    <td><a href="https://www.virustotal.com" target="_blank">virustotal.com</a></td>
+                </tr>
+                <tr>
+                    <td>Have I Been Pwned</td>
+                    <td>Поиск утечек данных</td>
+                    <td><a href="https://haveibeenpwned.com" target="_blank">haveibeenpwned.com</a></td>
+                </tr>
+                <tr>
+                    <td>Wireshark</td>
+                    <td>Анализ сетевого трафика</td>
+                    <td><a href="https://www.wireshark.org" target="_blank">wireshark.org</a></td>
+                </tr>
+                <tr>
+                    <td>GRC Shield's Up</td>
+                    <td>Проверка открытых портов</td>
+                    <td><a href="https://www.grc.com" target="_blank">grc.com</a></td>
+                </tr>
+                <tr>
+                    <td>KeePass</td>
+                    <td>Менеджер паролей</td>
+                    <td><a href="https://keepass.info" target="_blank">keepass.info</a></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
